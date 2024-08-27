@@ -23,7 +23,7 @@ model User {
   password     String
   created_at   DateTime?     @default(now())
   updated_at   DateTime?     @default(now())
-  transactions Transaction[]
+  Expanses Expanse[]
 
   @@map("users")
 }
@@ -33,18 +33,18 @@ model Category {
   name        String
   created_at  DateTime?     @default(now())
   updated_at  DateTime?     @default(now())
-  Transaction Transaction[]
+  Expanse Expanse[]
 
   @@map("categories")
 }
 
 
-model Transaction {
+model Expanse {
   id          String          @id @default(uuid())
+  name        String
   amount      Float
-  type        TransactionType
+  type        ExpanseType
   date        DateTime
-  description String?
   created_at  DateTime?       @default(now())
   updated_at  DateTime?       @default(now())
 
@@ -54,10 +54,10 @@ model Transaction {
   userId     String
   categoryId String
 
-  @@map("transactions")
+  @@map("expanses")
 }
 
-enum TransactionType {
+enum ExpanseType {
   INCOME
   EXPANSE
 }
