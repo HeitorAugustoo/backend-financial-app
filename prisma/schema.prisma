@@ -43,8 +43,9 @@ model Expanse {
   id          String          @id @default(uuid())
   name        String
   amount      Float
-  type        ExpanseType
-  date        DateTime
+  status      Boolean         @default(false)
+  due_date    DateTime
+  payment_date  DateTime?
   created_at  DateTime?       @default(now())
   updated_at  DateTime?       @default(now())
 
@@ -55,9 +56,4 @@ model Expanse {
   categoryId String
 
   @@map("expanses")
-}
-
-enum ExpanseType {
-  INCOME
-  EXPANSE
 }
