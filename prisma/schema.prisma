@@ -44,14 +44,14 @@ model Expanse {
   description String
   amount      Float
   status      Boolean         @default(false)
-  due_date    DateTime
-  payment_date  DateTime?
+  due_date    String?
+  payment_date  String?
   observation String?
   created_at  DateTime?       @default(now())
   updated_at  DateTime?       @default(now())
 
   user     User      @relation(fields: [userId], references: [id])
-  category Category? @relation(fields: [categoryId], references: [id])
+  category Category  @relation(fields: [categoryId], references: [id])
 
   userId     String
   categoryId String
