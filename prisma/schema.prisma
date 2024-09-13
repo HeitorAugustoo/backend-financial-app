@@ -41,11 +41,12 @@ model Category {
 
 model Expanse {
   id          String          @id @default(uuid())
-  name        String
+  description String
   amount      Float
   status      Boolean         @default(false)
   due_date    DateTime
   payment_date  DateTime?
+  observation String?
   created_at  DateTime?       @default(now())
   updated_at  DateTime?       @default(now())
 
