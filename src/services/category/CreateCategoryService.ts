@@ -1,11 +1,12 @@
 import prismaClient from "../../prisma";
 
 interface CategoryRequest {
-    name: string
+    name: string,
+    user_id: string
 }
 
 class CreateCategoryService{
-    async execute({ name }: CategoryRequest){
+    async execute({ name, user_id }: CategoryRequest){
         
         const categoryAlreadyExists = await prismaClient.category.findFirst({
             where: {
@@ -19,7 +20,9 @@ class CreateCategoryService{
 
             const category = await prismaClient.category.create({
                 data: {
-                    name: name
+                    name: name,
+                    userId: user_id
+
                 },
                 select: {
                     id: true,

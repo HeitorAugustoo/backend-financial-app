@@ -23,7 +23,8 @@ model User {
   password     String
   created_at   DateTime?     @default(now())
   updated_at   DateTime?     @default(now())
-  Expanses Expanse[]
+  expanses Expanse[]
+  categories Category[]
 
   @@map("users")
 }
@@ -33,7 +34,10 @@ model Category {
   name        String
   created_at  DateTime?     @default(now())
   updated_at  DateTime?     @default(now())
-  Expanse Expanse[]
+  expanses Expanse[]
+  users     User      @relation(fields: [userId], references: [id])
+
+  userId  String
 
   @@map("categories")
 }

@@ -5,12 +5,15 @@ import prismaClient from "../../prisma";
 class CreateCategoryController{
     async handle(req: Request, res: Response){
 
-        const {name} = req.body
+        const { name } = req.body
+
+        const user_id = req.user_id
 
         const createCategoryService = new CreateCategoryService()
 
         const category = await createCategoryService.execute({
-            name
+            name,
+            user_id
         })
 
         return res.json(category)

@@ -17,11 +17,11 @@ router.post('/users', new CreateUserController().handle)
 
 router.get('/session', new AuthUserController().handle)
 
-router.get('/me', isAuthenticated, isSameUser, new DetailUserController().handle)
+router.get('/me', isAuthenticated, new DetailUserController().handle)
 
-router.post('/category', isAuthenticated, isSameUser,  new CreateCategoryController().handle)
+router.post('/category', isAuthenticated,  new CreateCategoryController().handle)
 
-router.get('/categories', isAuthenticated, isSameUser,  new ListCategoryController().handle)
+router.get('/categories', isAuthenticated,  new ListCategoryController().handle)
 
 router.post('/expanse', isAuthenticated, isSameUser,  new AddExpanseController().handle)
 
