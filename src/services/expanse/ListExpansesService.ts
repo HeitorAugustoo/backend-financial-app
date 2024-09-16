@@ -5,8 +5,7 @@ class ListExpansesService{
 
         const expansesList = await prismaClient.expanse.findMany({
             where: {
-                userId: user_id,
-                status: false
+                userId: user_id
             }
         })
         return expansesList
