@@ -8,8 +8,8 @@ import { isAuthenticated } from './middlewares/isAuthenticated';
 
 import { CreateCategoryController } from './controllers/category/CreateCategoryController';
 import { ListCategoryController } from './controllers/category/ListCategoryController';
-import { AddExpanseController } from './controllers/expanse/AddExpanseController';
-import { ListExpansesController } from './controllers/expanse/ListExpansesController';
+import { AddExpenseController } from './controllers/expense/AddExpenseController';
+import { ListExpensesController } from './controllers/expense/ListExpensesController';
 
 const router = Router();
 
@@ -23,8 +23,8 @@ router.post('/category', isAuthenticated,  new CreateCategoryController().handle
 
 router.get('/categories', isAuthenticated,  new ListCategoryController().handle)
 
-router.post('/expanse', isAuthenticated,  new AddExpanseController().handle)
+router.post('/expense', isAuthenticated,  new AddExpenseController().handle)
 
-router.get('/expanses', isAuthenticated, new ListExpansesController().handle)
+router.get('/expenses', isAuthenticated, new ListExpensesController().handle)
 
 export { router }

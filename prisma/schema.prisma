@@ -23,7 +23,7 @@ model User {
   password     String
   created_at   DateTime?     @default(now())
   updated_at   DateTime?     @default(now())
-  expanses Expanse[]
+  expenses Expense[]
   categories Category[]
 
   @@map("users")
@@ -34,7 +34,7 @@ model Category {
   name        String
   created_at  DateTime?     @default(now())
   updated_at  DateTime?     @default(now())
-  expanses Expanse[]
+  expenses Expense[]
   users     User      @relation(fields: [userId], references: [id])
 
   userId  String
@@ -43,7 +43,7 @@ model Category {
 }
 
 
-model Expanse {
+model Expense {
   id          String          @id @default(uuid())
   description String
   amount      Float
@@ -60,5 +60,5 @@ model Expanse {
   userId     String
   categoryId String
 
-  @@map("expanses")
+  @@map("expenses")
 }

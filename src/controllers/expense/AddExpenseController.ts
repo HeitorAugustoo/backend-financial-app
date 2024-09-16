@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
-import { AddExpanseService } from "../../services/expanse/AddExpanseService";
+import { AddExpenseService } from "../../services/expense/AddExpenseService";
 
-class AddExpanseController{
+class AddExpenseController{
     async handle(req: Request, res: Response){
 
         const { description, amount, due_date, category_id } = req.body
 
         const user_id = req.user_id
 
-        const addExpanseService = new AddExpanseService()
+        const addExpenseService = new AddExpenseService()
 
-        const expanse = await addExpanseService.execute({
+        const expense = await addExpenseService.execute({
                 description,
                 amount,
                 due_date,
@@ -18,9 +18,9 @@ class AddExpanseController{
                 user_id
         })
 
-        return res.json(expanse)
+        return res.json(expense)
 
     }
 }
 
-export { AddExpanseController }
+export { AddExpenseController }

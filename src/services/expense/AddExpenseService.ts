@@ -1,6 +1,6 @@
 import prismaClient from "../../prisma";
 
-interface ExpanseRequest{
+interface ExpenseRequest{
     description: string;
     amount: number;
     due_date: string;
@@ -8,8 +8,8 @@ interface ExpanseRequest{
     user_id: string;
 }
 
-class AddExpanseService{
-    async execute({ description, amount, due_date, category_id, user_id }: ExpanseRequest){
+class AddExpenseService{
+    async execute({ description, amount, due_date, category_id, user_id }: ExpenseRequest){
 
         const verifyCategory = await prismaClient.category.findFirst({
             where: {
@@ -22,7 +22,7 @@ class AddExpanseService{
             throw new Error(`Category not found or not selected`)
         }
 
-        const expanse = await prismaClient.expanse.create({
+        const expense = await prismaClient.expense.create({
             data: {
                 description: description,
                 amount: amount,
@@ -32,8 +32,8 @@ class AddExpanseService{
             }
         })
 
-        return expanse
+        return expense
     }
 }
 
-export { AddExpanseService }
+export { AddExpenseService }
