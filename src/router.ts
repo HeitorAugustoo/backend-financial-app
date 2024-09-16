@@ -8,8 +8,7 @@ import { isAuthenticated } from './middlewares/isAuthenticated';
 
 import { CreateCategoryController } from './controllers/category/CreateCategoryController';
 import { ListCategoryController } from './controllers/category/ListCategoryController';
-import { AddExpanseController } from './controllers/AddExpanseController.ts/AddExpanseController';
-import { isSameUser } from './middlewares/isSameUser';
+import { AddExpanseController } from './controllers/expanse/AddExpanseController';
 
 const router = Router();
 
@@ -23,6 +22,6 @@ router.post('/category', isAuthenticated,  new CreateCategoryController().handle
 
 router.get('/categories', isAuthenticated,  new ListCategoryController().handle)
 
-router.post('/expanse', isAuthenticated, isSameUser,  new AddExpanseController().handle)
+router.post('/expanse', isAuthenticated,  new AddExpanseController().handle)
 
 export { router }
