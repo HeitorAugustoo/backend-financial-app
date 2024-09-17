@@ -10,6 +10,7 @@ import { CreateCategoryController } from './controllers/category/CreateCategoryC
 import { ListCategoryController } from './controllers/category/ListCategoryController';
 import { AddExpenseController } from './controllers/expense/AddExpenseController';
 import { ListExpensesController } from './controllers/expense/ListExpensesController';
+import { ListByCategoryController } from './controllers/expense/ListByCategoryController';
 
 const router = Router();
 
@@ -26,5 +27,7 @@ router.get('/categories', isAuthenticated,  new ListCategoryController().handle)
 router.post('/expense', isAuthenticated,  new AddExpenseController().handle)
 
 router.get('/expenses', isAuthenticated, new ListExpensesController().handle)
+
+router.get('/category/expenses', isAuthenticated, new ListByCategoryController().handle)
 
 export { router }
