@@ -5,7 +5,7 @@ import prismaClient from "../../prisma";
 class CreateCategoryController{
     async handle(req: Request, res: Response){
 
-        const { name } = req.body
+        const name  = req.body
 
         const user_id = req.user_id
 
