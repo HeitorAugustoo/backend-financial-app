@@ -16,12 +16,15 @@ class CreateUserService{
             throw new Error("Email incorrect")
         }
 
+        
         const userAlreadyExists = await prismaClient.user.findFirst({
             where: {
-                email: email
+                OR: [
+                    { email: email },
+                    { cpf: cpf }
+                ]
             }
-        })
-
+        });
         
         if(userAlreadyExists){
             throw new Error("User already exists")
