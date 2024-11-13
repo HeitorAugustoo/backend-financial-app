@@ -12,7 +12,7 @@ class ListExpensesController{
 
         const expenses = await listExpenseService.execute(user_id)
 
-        return res.json(expenses)
+        return res.json({expenses})
 
     }
 }
