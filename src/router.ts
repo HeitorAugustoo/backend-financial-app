@@ -14,6 +14,7 @@ import { ListByCategoryController } from './controllers/expense/ListByCategoryCo
 import { DeleteCategoryController } from './controllers/category/DeleteCategoryController';
 import { EditCategoryController } from './controllers/category/EditCategoryController';
 import { DetailExpenseController } from './controllers/expense/DetailExpenseController';
+import { PayExpenseController } from './controllers/expense/PayExpenseController';
 
 const router = Router();
 
@@ -23,10 +24,6 @@ router.post('/session', new AuthUserController().handle)
 
 router.get('/me', isAuthenticated, new DetailUserController().handle)
 
-router.post('/category', isAuthenticated,  new CreateCategoryController().handle)
-
-router.get('/categories', isAuthenticated,  new ListCategoryController().handle)
-
 router.post('/expense', isAuthenticated,  new AddExpenseController().handle)
 
 router.get('/expenses', isAuthenticated, new ListExpensesController().handle)
@@ -34,6 +31,12 @@ router.get('/expenses', isAuthenticated, new ListExpensesController().handle)
 router.get('/expense/detail', isAuthenticated, new DetailExpenseController().handle)
 
 router.get('/category/expenses', isAuthenticated, new ListByCategoryController().handle)
+
+router.put('/expense/status', isAuthenticated, new PayExpenseController().handle)
+
+router.post('/category', isAuthenticated,  new CreateCategoryController().handle)
+
+router.get('/categories', isAuthenticated,  new ListCategoryController().handle)
 
 router.delete('/delete-category', isAuthenticated, new DeleteCategoryController().handle)
 

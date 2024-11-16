@@ -10,8 +10,6 @@ class EditCategoryController{
 
         const { new_name } = req.body
 
-        console.log(user_id, category_id, new_name)
-
         const editCategory = new EditCategoryService()
 
         const categoryUpdated = await editCategory.execute({
