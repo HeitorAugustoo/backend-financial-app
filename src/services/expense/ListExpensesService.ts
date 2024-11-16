@@ -6,6 +6,13 @@ class ListExpensesService{
         const expensesList = await prismaClient.expense.findMany({
             where: {
                 userId: user_id
+            },
+            select: {
+                id: true,
+                description: true,
+                amount: true,
+                status: true,
+                categoryId: true
             }
         })
 
