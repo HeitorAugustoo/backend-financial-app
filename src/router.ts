@@ -13,6 +13,7 @@ import { ListExpensesController } from './controllers/expense/ListExpensesContro
 import { ListByCategoryController } from './controllers/expense/ListByCategoryController';
 import { DeleteCategoryController } from './controllers/category/DeleteCategoryController';
 import { EditCategoryController } from './controllers/category/EditCategoryController';
+import { DetailExpenseController } from './controllers/expense/DetailExpenseController';
 
 const router = Router();
 
@@ -29,6 +30,8 @@ router.get('/categories', isAuthenticated,  new ListCategoryController().handle)
 router.post('/expense', isAuthenticated,  new AddExpenseController().handle)
 
 router.get('/expenses', isAuthenticated, new ListExpensesController().handle)
+
+router.get('/expense/detail', isAuthenticated, new DetailExpenseController().handle)
 
 router.get('/category/expenses', isAuthenticated, new ListByCategoryController().handle)
 
