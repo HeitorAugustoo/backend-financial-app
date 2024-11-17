@@ -16,6 +16,7 @@ import { EditCategoryController } from './controllers/category/EditCategoryContr
 import { DetailExpenseController } from './controllers/expense/DetailExpenseController';
 import { PayExpenseController } from './controllers/expense/PayExpenseController';
 import { DeleteExpenseController } from './controllers/expense/DeleteExpenseService';
+import { EditUserController } from './controllers/user/EditUserController';
 
 const router = Router();
 
@@ -24,6 +25,8 @@ router.post('/users', new CreateUserController().handle)
 router.post('/session', new AuthUserController().handle)
 
 router.get('/me', isAuthenticated, new DetailUserController().handle)
+
+router.put('/user/edit', isAuthenticated, new EditUserController().handle)
 
 router.post('/expense', isAuthenticated,  new AddExpenseController().handle)
 
