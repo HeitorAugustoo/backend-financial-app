@@ -15,6 +15,7 @@ import { DeleteCategoryController } from './controllers/category/DeleteCategoryC
 import { EditCategoryController } from './controllers/category/EditCategoryController';
 import { DetailExpenseController } from './controllers/expense/DetailExpenseController';
 import { PayExpenseController } from './controllers/expense/PayExpenseController';
+import { DeleteExpenseController } from './controllers/expense/DeleteExpenseService';
 
 const router = Router();
 
@@ -33,6 +34,8 @@ router.get('/expense/detail', isAuthenticated, new DetailExpenseController().han
 router.get('/category/expenses', isAuthenticated, new ListByCategoryController().handle)
 
 router.put('/expense/status', isAuthenticated, new PayExpenseController().handle)
+
+router.delete('/delete-expense', isAuthenticated, new DeleteExpenseController().handle)
 
 router.post('/category', isAuthenticated,  new CreateCategoryController().handle)
 
