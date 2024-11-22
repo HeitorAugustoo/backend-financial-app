@@ -6,15 +6,14 @@ class EditUserController{
 
         const user_id = req.user_id
 
-        const { new_name, new_email, new_password} = req.body
+        const { new_name, new_email} = req.body
 
         const editUser = new EditUserService()
 
         const user = await editUser.execute({
             user_id,
             new_email,
-            new_name,
-            new_password
+            new_name
         })
 
         return res.json(user)
