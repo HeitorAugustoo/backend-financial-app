@@ -2,12 +2,11 @@ import prismaClient from "../../prisma";
 
 interface ExpenseRequest{
     expense_id: string,
-    user_id: string,
-    new_status: boolean
+    user_id: string
 }
 
 class PayExpenseService{
-    async execute({expense_id, user_id, new_status}: ExpenseRequest){
+    async execute({expense_id, user_id}: ExpenseRequest){
 
         const payExpense = await prismaClient.expense.update({
             where: {
@@ -15,7 +14,7 @@ class PayExpenseService{
                 userId: user_id
             },
             data: {
-                status: new_status
+                status: true
             }
         })
 
