@@ -15,7 +15,9 @@ Este é um aplicativo desenvolvido para como tema de TCC e para ajudar os usuár
 - Faça a perguntas como:
   - *"Como posso economizar mais dinheiro?"*
   - *"Quais são as melhores práticas para controle financeiro?"*
-- **Contexto contínuo no chat**: As respostas consideram mensagens anteriores na mesma sessão.
+  - *"Como juntar dinheiro para viajar?"*
+  Fique a vontade para falar sobre os temas: despesas pessoais e finanças!
+
 
 ---
 
@@ -57,10 +59,6 @@ Este é um aplicativo desenvolvido para como tema de TCC e para ajudar os usuár
    npm run dev
    ```
 
----
-
-## 🔗 Endpoints da API
-
 
 ---
 
@@ -101,32 +99,8 @@ Este é um aplicativo desenvolvido para como tema de TCC e para ajudar os usuár
 
 ---
 
-Com base na imagem enviada, atualizei a seção de estrutura do projeto no README:
 
 ```markdown
-## 📂 Estrutura do projeto
-
-```
-backend/
-├── node_modules/          # Dependências do projeto
-├── prisma/                # Arquivos do Prisma (esquema, migrações)
-├── src/                   # Código fonte principal
-│   ├── @types/            # Definições de tipos personalizados
-│   ├── controllers/       # Controladores para lidar com requisições
-│   ├── middlewares/       # Middlewares de autenticação e validação
-│   ├── prisma/            # Configuração e inicialização do cliente Prisma
-│   ├── services/          # Lógica de negócios e serviços
-│   ├── router.ts          # Configuração das rotas
-│   ├── server.ts          # Inicialização do servidor
-├── .env                   # Variáveis de ambiente
-├── .gitignore             # Arquivos a serem ignorados pelo Git
-├── package.json           # Configurações do projeto e dependências
-├── package-lock.json      # Controle de versão das dependências
-├── readme                 # Documentação do projeto
-├── tsconfig.json          # Configuração do TypeScript
-├── yarn.lock              # Controle de versão das dependências para Yarn
-```
-
 
 ## 📝 Licença
 
@@ -138,6 +112,6 @@ Este projeto está licenciado sob a [MIT License](https://opensource.org/license
 
 Se tiver dúvidas ou sugestões, entre em contato:
 
-- **LinkedIn**: (https://linkedin.com/in/heitor-augusto-dev)
+- **LinkedIn**: https://linkedin.com/in/heitor-augusto-dev
 
 ---
