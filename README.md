@@ -16,7 +16,7 @@ Este é um aplicativo desenvolvido para como tema de TCC e para ajudar os usuár
   - *"Como posso economizar mais dinheiro?"*
   - *"Quais são as melhores práticas para controle financeiro?"*
   - *"Como juntar dinheiro para viajar?"*
-  Fique a vontade para falar sobre os temas: despesas pessoais e finanças!
+  - **Fique a vontade para falar sobre os temas: despesas pessoais e finanças!**
 
 
 ---
