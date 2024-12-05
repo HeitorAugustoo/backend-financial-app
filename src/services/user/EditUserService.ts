@@ -33,7 +33,7 @@ class EditUserService {
             throw new Error("the passwords entered do not match")
         }
 
-        const passwordHash = await bcrypt.hash(new_password, 8)
+        const passwordHash = new_password ? await bcrypt.hash(new_password, 8) : undefined
 
         const editUser = await prismaClient.user.update({
             where: {
